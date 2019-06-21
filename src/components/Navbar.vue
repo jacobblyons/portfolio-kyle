@@ -9,19 +9,20 @@
 
 <style lang="scss" scoped>
 .navbar {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-start;
-  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "brand . . .  . col";
   color: white;
 
   &-brand {
-    padding: {
-      top: 0rem;
-      left: 5rem;
-      right: 2rem;
-      bottom: 1rem;
-    }
+    grid-area: brand;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   &-brand-icon {
@@ -30,6 +31,7 @@
   }
 
   &-collapse {
+    grid-area: col;
     padding: {
       top: 1rem;
       left: 2rem;

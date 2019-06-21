@@ -10,7 +10,12 @@
     <div class="home-portrait-banner">
       <img class="home-portrait-banner-img" src="../assets/Rhodes .png">
     </div>
-    <vertical-label class="home-left-label" title="Introduction"></vertical-label>
+    <div class="home-left-label">
+      <vertical-label title="Introduction"></vertical-label>
+    </div>
+    <div class="home-content">
+      <home-content></home-content>
+    </div>
   </div>
 </template>
 
@@ -18,12 +23,14 @@
 // @ is an alias to /src
 import Navbar from "@/components/Navbar.vue";
 import VerticalLabel from "@/components/VerticalLabel.vue";
+import HomeContent from "@/components/HomeContent.vue";
 
 export default {
   name: "home",
   components: {
     Navbar,
-    VerticalLabel
+    VerticalLabel,
+    HomeContent
   }
 };
 </script>
@@ -33,12 +40,13 @@ export default {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 12rem repeat(2, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 12rem repeat(2, 1fr) 5rem;
   grid-template-areas:
-    "navbar navbar navbar"
-    "title content contact"
-    "title content contact";
+    "navbar navbar navbar  navbar  navbar  navbar"
+    "title banner banner banner banner contact"
+    "title content content content content contact"
+    ". . . . . . ";
   &-nav {
     grid-area: navbar;
     z-index: 10;
@@ -46,7 +54,7 @@ export default {
 
   &-portrait-foreground {
     z-index: 12;
-    grid-area: 2 / 1/ 4/ 4;
+    grid-area: 2 / 1/ 7/ 7;
     width: 100%;
     display: flex;
     overflow: hidden;
@@ -63,7 +71,7 @@ export default {
   &-portrait-background {
     z-index: 10;
     overflow-y: hidden;
-    grid-area: 2 / 1/ 4/ 4;
+    grid-area: 2 / 1/ 7/ 7;
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
@@ -79,14 +87,14 @@ export default {
   &-portrait-banner {
     z-index: 10;
     overflow-y: hidden;
-    grid-area: 2 / 1 / 4 / 4;
+    grid-area: 2 / 2/ 7/ 6;
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-start;
     justify-content: center;
     &-img {
-      width: 60%;
+      width: 100%;
       min-width: 500px;
       height: auto;
     }
@@ -95,7 +103,15 @@ export default {
   &-left-label {
     z-index: 10;
     grid-area: title;
-    padding-left: 5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-content {
+    z-index: 15;
+    grid-area: content;
   }
 }
 </style>
