@@ -40,13 +40,14 @@ export default {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 12rem repeat(2, 1fr) 5rem;
+  grid-template-columns: 15% 7% repeat(4, 1fr) 7% 15%;
+  grid-template-rows: 6rem repeat(3, 1fr) 5rem;
   grid-template-areas:
-    "navbar navbar navbar  navbar  navbar  navbar"
-    "title banner banner banner banner contact"
-    "title content content content content contact"
-    ". . . . . . ";
+    "navbar navbar navbar  navbar  navbar  navbar navbar navbar"
+    "navbar navbar navbar  navbar  navbar  navbar navbar navbar"
+    "title . content content content content . contact"
+    "title . content content content content . contact"
+    ". . . . . . . . ";
   &-nav {
     grid-area: navbar;
     z-index: 10;
@@ -54,7 +55,7 @@ export default {
 
   &-portrait-foreground {
     z-index: 12;
-    grid-area: 2 / 1/ 7/ 7;
+    grid-area: 2 / 1/ 6/ 9;
     width: 100%;
     display: flex;
     overflow: hidden;
@@ -71,7 +72,7 @@ export default {
   &-portrait-background {
     z-index: 10;
     overflow-y: hidden;
-    grid-area: 2 / 1/ 7/ 7;
+    grid-area: 2 / 1/ 6/ 9;
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
@@ -87,7 +88,7 @@ export default {
   &-portrait-banner {
     z-index: 10;
     overflow-y: hidden;
-    grid-area: 2 / 2/ 7/ 6;
+    grid-area: 2 / 3/ 6/ 7;
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
@@ -106,12 +107,16 @@ export default {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   &-content {
     z-index: 15;
     grid-area: content;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: center;
   }
 }
 </style>

@@ -12,7 +12,7 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 15% repeat(4, 1fr) 15%;
   grid-template-rows: auto;
   grid-template-areas: "brand . . .  . col";
   color: white;
