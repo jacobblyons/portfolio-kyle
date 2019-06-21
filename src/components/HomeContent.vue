@@ -24,8 +24,10 @@
   &-name {
     color: #eeca8b;
     font: {
-      size: 4em;
+      size: 5em;
+      family: "komu-b";
     }
+    letter-spacing: 0.2em;
   }
 
   &-titles {
@@ -44,6 +46,8 @@
       color: white;
       font: {
         size: 2em;
+        family: "futura-pt";
+        weight: 500;
       }
       &-container {
         display: flex;

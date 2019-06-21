@@ -1,7 +1,7 @@
 <template>
   <div class="vertical-label">
     <div class="vertical-label-line">
-      <svg height="40" width="5">
+      <svg height="55" width="5">
         <line x1="0" y1="0" x2="0" y2="40" style="stroke:rgb(255,255,255);stroke-width:9"></line>
       </svg>
     </div>
@@ -22,8 +22,10 @@
   &-text {
     color: white;
     font: {
-      size: 2.5em;
+      size: 2em;
+      family: "komu-b";
     }
+    letter-spacing: 0.4em;
     writing-mode: vertical-rl;
     text-orientation: sideways;
   }
@@ -34,7 +36,8 @@
 export default {
   name: "vertical-label",
   props: {
-    title: String
+    title: String,
+    lineThickness: Number
   }
 };
 </script>
