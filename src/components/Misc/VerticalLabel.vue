@@ -2,7 +2,7 @@
   <div class="vertical-label">
     <div class="vertical-label-line">
       <svg height="55" width="5">
-        <line x1="0" y1="0" x2="0" y2="40" style="stroke:rgb(255,255,255);stroke-width:9"></line>
+        <line x1="0" y1="0" x2="0" y2="40" style="stroke:rgb(255,255,255);stroke-width:9" />
       </svg>
     </div>
     <div>
@@ -10,6 +10,16 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "vertical-label",
+  props: {
+    title: String,
+    lineThickness: Number
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .vertical-label {
@@ -32,13 +42,4 @@
 }
 </style>
 
-<script>
-export default {
-  name: "vertical-label",
-  props: {
-    title: String,
-    lineThickness: Number
-  }
-};
-</script>
 

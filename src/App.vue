@@ -1,21 +1,11 @@
 <template>
   <div id="app">
-    <div id="content">
-      <router-view/>
-    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
-import VerticalLabel from "@/components/VerticalLabel.vue";
-
-export default {
-  components: {
-    Navbar,
-    VerticalLabel
-  }
-};
+export default {};
 </script>
 
 <style lang="scss">
@@ -25,14 +15,6 @@ body {
 }
 #app {
   height: 100vh;
-  display: grid;
-  grid-template-columns: 7rem 1fr 1fr;
-  grid-template-rows: 12rem 1fr 1fr;
-  grid-template-areas:
-    "content content content"
-    "content content content"
-    "content content content";
-
   background : {
     color: #0c0c0c;
   }

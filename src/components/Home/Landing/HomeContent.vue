@@ -4,7 +4,7 @@
     <div class="home-content-titles">
       <div class="home-content-titles-indent-line">
         <svg height="75" width="9">
-          <line x1="0" y1="0" x2="0" y2="75" style="stroke:#eeca8b;stroke-width:9"></line>
+          <line x1="0" y1="0" x2="0" y2="75" style="stroke:#eeca8b;stroke-width:9" />
         </svg>
       </div>
       <div class="home-content-titles-text-container">
