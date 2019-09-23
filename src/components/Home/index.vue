@@ -4,16 +4,20 @@
       <div class="section">
         <landing></landing>
       </div>
-      <div class="section">Second section ...</div>
+      <div class="section">
+        <projects></projects>
+      </div>
     </full-page>
   </div>
 </template>
 
 <script>
 import Landing from "./Landing";
+import Projects from "./Projects";
 export default {
   components: {
-    Landing
+    Landing,
+    Projects
   }
 };
 </script>

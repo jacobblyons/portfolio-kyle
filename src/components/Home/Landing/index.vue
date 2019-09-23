@@ -2,7 +2,7 @@
   <div class="home">
     <!-- portrait background -->
     <div class="home-portrait-background">
-      <img class="home-portrait-background-img" src="@/assets/header_background - cropped.png" />
+      <img class="home-portrait-background-img" src="@/assets/header_background.png" />
     </div>
     <!-- portrait foreground-->
     <div class="home-portrait-foreground">
@@ -10,7 +10,7 @@
     </div>
     <!-- portrait banner -->
     <div class="home-portrait-banner">
-      <img class="home-portrait-banner-img" src="@/assets/Rhodes .png" />
+      <img class="home-portrait-banner-img" src="@/assets/RHODES.png" />
     </div>
     <!-- left label -->
     <div class="home-left-label">
@@ -29,8 +29,8 @@
       <collapse-button @ondown="openSidebar" @onreleased="closeSidebar" />
     </div>
     <!-- sidebar -->
-    <div v-if="sidebarOpened" class="home-sidebar">
-      <sidebar />
+    <div class="home-sidebar">
+      <sidebar :opened="sidebarOpened" />
     </div>
   </div>
 </template>
@@ -88,7 +88,7 @@ export default {
     grid-template-rows: 10em 10em repeat(2, auto);
     grid-template-areas:
       ".......  brand   .......   .......   .......  .......  collapse ......."
-      ".......  ....... banner    banner    .......  .......  .......  ......."
+      ".......  ....... .......   .......   .......  .......  .......  ......."
       ".......  title   .......   content   .......  .......  .......  ......."
       ".......  ....... .......   .......   .......  .......  .......  .......";
   }
@@ -147,13 +147,13 @@ export default {
   &-portrait-banner {
     z-index: 10;
     overflow-y: hidden;
-    grid-area: banner;
     width: 100%;
     display: none;
     @include desktop {
+      grid-area: 2 /4 / 5 / 9;
       display: flex;
       flex-flow: row nowrap;
-      align-items: flex-end;
+      align-items: flex-start;
       justify-content: flex-start;
     }
     &-img {

@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div class="sidebar" :class="{'sidebar-closed':!opened}">
     <sidebar-link title="intro" />
     <sidebar-link title="work">
       <sidebar-link-child title="Indispose"></sidebar-link-child>
@@ -19,6 +19,9 @@ export default {
   components: {
     SidebarLink,
     SidebarLinkChild
+  },
+  props: {
+    opened: Boolean
   }
 };
 </script>
@@ -27,13 +30,20 @@ export default {
 .sidebar {
   width: 100%;
   height: 100vh;
+  transition: 0.3s;
   background: {
     color: #eeca8b;
   }
+  overflow-x: hidden;
 
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+
+  &-closed {
+    width: 300%;
+    margin-left: 100%;
+  }
 }
 </style>
