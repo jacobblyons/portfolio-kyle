@@ -12,3 +12,10 @@ $desktop-width: 1165px;
     @content;
   }
 }
+
+@mixin gridarea($area-map) {
+  grid-row-start: map-get($area-map, rowstart);
+  grid-row-end: map-get($area-map, rowend);
+  grid-column-start: map-get($area-map, colstart);
+  grid-column-end: map-get($area-map, colend);
+}

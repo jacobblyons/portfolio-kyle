@@ -20,18 +20,6 @@
     <div class="home-content">
       <home-content></home-content>
     </div>
-    <!-- brand -->
-    <div class="home-brand">
-      <img class="home-brand-icon" src="@/assets/Asset 6.png" />
-    </div>
-    <!-- collapse -->
-    <div class="home-collapse">
-      <collapse-button @ondown="openSidebar" @onreleased="closeSidebar" />
-    </div>
-    <!-- sidebar -->
-    <div class="home-sidebar">
-      <sidebar :opened="sidebarOpened" />
-    </div>
   </div>
 </template>
 
@@ -69,6 +57,9 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../../styles/mixins";
+$brand-width: 5em;
+$collapse-width: 5em;
+$margin: 5em;
 .home {
   width: 100%;
   height: 100%;
@@ -76,7 +67,7 @@ export default {
   min-height: 780px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 5em 5em auto 5em 5em;
+  grid-template-columns: $margin $brand-width auto $collapse-width $margin;
   grid-template-rows: 10em 10em repeat(2, 1fr);
   grid-template-areas:
     ". brand . collapse ."
